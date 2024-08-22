@@ -1,6 +1,6 @@
 /*** COLORS ***/
 :root {
-    --bg-color: #913D88;
+    --bg-color: #006d77;
     --txt-color: #FFFFFF;
     --icn-color: #FFFFFF;
 }
@@ -28,6 +28,24 @@ p {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+}
+
+/*** Header and Logo ***/
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--txt-color);
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #ffddd2;  /* Slightly different color on hover for effect */
 }
 
 /*** STYLES ***/
@@ -77,5 +95,5 @@ p {
     font-size: 15px;
     color: inherit;
     background: transparent;
-    outline-width: 0px;
+    outline: none;  /* Remove the outline on focus */
 }

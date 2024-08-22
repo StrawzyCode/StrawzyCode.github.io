@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Search Box</title>
+    <title>Footydex Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Add the logo in the top right corner -->
+    <div class="header">
+        <a href="index.html" class="logo">Footydex</a>
+    </div>
+
     <div class="cntr">
         <div class="cntr-innr">
             <label class="search" for="inpt_search">
                 <input id="inpt_search" type="text" />
             </label>
-            <p>Hover to see the magic.</p>
+            <p>Hover to input postcode.</p>
         </div>
     </div>
+
     <script>
         document.getElementById("inpt_search").addEventListener('focus', function() {
             this.parentNode.classList.add('active');
