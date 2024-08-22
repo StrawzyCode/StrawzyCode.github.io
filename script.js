@@ -1,10 +1,10 @@
-document.getElementById('searchBtn').addEventListener('click', function() {
-    searchPostcode();
+document.getElementById("inpt_search").addEventListener('focus', function() {
+    this.parentNode.classList.add('active');
 });
 
-document.getElementById('inpt_search').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        searchPostcode();
+document.getElementById("inpt_search").addEventListener('blur', function() {
+    if(this.value.length === 0) {
+        this.parentNode.classList.remove('active');
     }
 });
 
@@ -12,6 +12,8 @@ function searchPostcode() {
     const postcode = document.getElementById('inpt_search').value;
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = 'Searching...';
+
+    console.log('Searching for postcode:', postcode); // Debugging message
 
     fetch(`https://your-backend-api.fly.dev/search?postcode=${encodeURIComponent(postcode)}`)
         .then(response => response.json())
@@ -27,6 +29,8 @@ function searchPostcode() {
             }
         })
         .catch(err => {
+            console.error('Error fetching data:', err);
             resultsDiv.innerHTML = 'Error fetching data. Please try again later.';
         });
 }
+
